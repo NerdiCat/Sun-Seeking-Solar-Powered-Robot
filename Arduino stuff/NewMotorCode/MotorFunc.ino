@@ -8,6 +8,11 @@ void single_test(){
    delay(1000);
   }
 }
+void toggleForward(){
+  for (int i = 1; i <= 4; i++) {
+    Motor(i,'f');
+ }
+}
 void Stop(){
  for (int i = 1; i <= 4; i++) {
     Motor(i,'s');

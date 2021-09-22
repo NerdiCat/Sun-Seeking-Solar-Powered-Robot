@@ -5,3 +5,9 @@ void test(){
   Left(1000);
   Right(1000);
 }
+
+void dontFall(){
+  if (analogRead(cliff)>700){
+    Stop();
+  }
+}

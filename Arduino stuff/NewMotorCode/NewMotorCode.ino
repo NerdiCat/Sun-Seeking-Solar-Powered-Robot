@@ -6,6 +6,7 @@
   int m3n=8;
   int m4p=7;
   int m4n=6;
+  int cliff=A0;
 void setup() {
   // put your setup code here, to run once:
   pinMode(m1p,OUTPUT);
@@ -18,10 +19,12 @@ void setup() {
   pinMode(m4n,OUTPUT);
   Serial.begin(9600);
   //test();
-  Left(1000);
+  //Left(1000);
+  toggleForward();
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+ //checkCliff();
+ dontFall();
 }
