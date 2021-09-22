@@ -18,7 +18,7 @@ void setup() {
   pinMode(m4n,OUTPUT);
   Serial.begin(9600);
   //test();
-  Forward(10000);
+  Left(1000);
 }
 
 void loop() {
