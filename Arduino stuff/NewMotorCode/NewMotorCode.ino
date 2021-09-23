@@ -21,6 +21,7 @@ void setup() {
   //test();
   //Left(1000);
   toggleForward();
+  delay(200);
 }
 
 void loop() {
