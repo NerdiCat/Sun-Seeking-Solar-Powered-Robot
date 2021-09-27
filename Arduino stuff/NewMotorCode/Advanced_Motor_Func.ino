@@ -16,7 +16,6 @@ void dontFall(){  //code to check if going over a clif and correct
     Serial.println(analogRead(cliff));
     Serial.println("stop");
     S=1;
-    
   } 
   if (S==1){//the antifalling mechanism is currently just going backwards for half a seccond
     Back(500);

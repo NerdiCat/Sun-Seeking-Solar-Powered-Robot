@@ -25,6 +25,7 @@ void setup() {
 }
 
 void loop() {
+  Serial.println(analogRead(cliff));
   // put your main code here, to run repeatedly:
  //checkCliff();
  dontFall();
