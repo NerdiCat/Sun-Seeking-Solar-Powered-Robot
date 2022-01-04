@@ -7,6 +7,10 @@
   int m4p=7;
   int m4n=6;
   int cliff=A0;
+  #include <Wire.h>
+  #include "Adafruit_VL6180X.h"
+
+  Adafruit_VL6180X vl = Adafruit_VL6180X();
 void setup() {
   // put your setup code here, to run once:
   pinMode(m1p,OUTPUT);
@@ -17,16 +21,29 @@ void setup() {
   pinMode(m3n,OUTPUT);
   pinMode(m4p,OUTPUT);
   pinMode(m4n,OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
   //test();
   //Left(1000);
-  toggleForward();
+  //toggleForward();
   delay(200);
+  
+  // wait for serial port to open on native usb devices
+  while (!Serial) {
+    delay(1);
+  }
+  
+  Serial.println("Adafruit VL6180x test!");
+  if (! vl.begin()) {
+    Serial.println("Failed to find sensor");
+    while (1);
+  }
+  Serial.println("Sensor found!");
 }
 
 void loop() {
-  Serial.println(analogRead(cliff));
+  //Serial.println(analogRead(cliff));
+ // Serial.println("test");
   // put your main code here, to run repeatedly:
- //checkCliff();
- dontFall();
+ checkCliff();
+ //dontFall();
 }
