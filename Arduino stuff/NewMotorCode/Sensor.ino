@@ -41,3 +41,13 @@ void checkCliff(){
   }
   delay(50);
 }
+bool gonnaFall(){
+  uint8_t range = vl.readRange();
+  uint8_t status = vl.readRangeStatus();
+
+  if (status == VL6180X_ERROR_NONE && range<100) {
+    return false;
+  }
+  else return true;
+  delay(50);
+}

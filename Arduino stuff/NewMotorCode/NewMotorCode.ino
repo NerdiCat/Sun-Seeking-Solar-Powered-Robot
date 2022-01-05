@@ -22,10 +22,10 @@ void setup() {
   pinMode(m4p,OUTPUT);
   pinMode(m4n,OUTPUT);
   Serial.begin(115200);
+  delay(200);
   //test();
   //Left(1000);
-  //toggleForward();
-  delay(200);
+  //delay(200);
   
   // wait for serial port to open on native usb devices
   while (!Serial) {
@@ -38,12 +38,16 @@ void setup() {
     while (1);
   }
   Serial.println("Sensor found!");
-}
+  toggleForward();
 
+}
+ 
 void loop() {
   //Serial.println(analogRead(cliff));
  // Serial.println("test");
   // put your main code here, to run repeatedly:
- checkCliff();
- //dontFall();
+ //checkCliff();
+ //Serial.println(gonnaFall());
+ dontFall();
+
 }
