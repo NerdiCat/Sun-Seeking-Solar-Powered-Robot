@@ -42,19 +42,6 @@ void setID() {
     while (1);
   }
   lox2.setAddress(LOX2_ADDRESS);
-
-  // activating LOX3
-  /*
-  digitalWrite(SHT_LOX3, HIGH);
-  delay(10);
-
-  //initing LOX3
-  if (!lox3.begin()) {
-    Serial.println(F("Failed to boot third VL6180X"));
-    while (1);
-  }
-  lox3.setAddress(LOX3_ADDRESS);
-  */
 }
 
 void readSensor(Adafruit_VL6180X &vl) {
@@ -200,12 +187,7 @@ void timed_async_read_gpio() {
       status_lox2 = lox2.readRangeStatus();
       pending_sensors ^= 0x2;
     }
-   /* if ((pending_sensors & 0x4) && !digitalRead(GPIO_LOX3)) {
-      range_lox3 = lox3.readRangeResult();
-      status_lox3 = lox3.readRangeStatus();
-      pending_sensors ^= 0x4;
-    }
-  */}
+  }
   uint32_t delta_time = millis() - start_time;
   digitalWrite(TIMING_PIN, LOW);
   Serial.print(delta_time, DEC);
@@ -296,7 +278,6 @@ void Process_continuous_range() {
 
   pinMode(SHT_LOX1, OUTPUT);
   pinMode(SHT_LOX2, OUTPUT);
-//  pinMode(SHT_LOX3, OUTPUT);
 
   // Enable timing pin so easy to see when pass starts and ends
   pinMode(TIMING_PIN, OUTPUT);
@@ -305,14 +286,12 @@ void Process_continuous_range() {
   // If we defined GPIO pins, enable them as PULL UP
   pinMode(GPIO_LOX1, INPUT_PULLUP);
   pinMode(GPIO_LOX2, INPUT_PULLUP);
- // pinMode(GPIO_LOX3, INPUT_PULLUP);
 #endif
 
   Serial.println("Shutdown pins inited...");
 
   digitalWrite(SHT_LOX1, LOW);
   digitalWrite(SHT_LOX2, LOW);
-  //digitalWrite(SHT_LOX3, LOW);
   digitalWrite(TIMING_PIN, LOW);
   Serial.println("All in reset mode...(pins are low)");
 

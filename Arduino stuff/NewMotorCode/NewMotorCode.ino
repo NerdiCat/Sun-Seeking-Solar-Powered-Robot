@@ -9,7 +9,6 @@
   int cliff=A0;
   #include <Wire.h>
   #include "Adafruit_VL6180X.h"
-  //Adafruit_VL6180X vl = Adafruit_VL6180X();
 
 
 //copied code from vl6180x library and modified for 2 sensors instead of 3:
@@ -18,24 +17,20 @@
 // address we will assign if dual sensor is present
 #define LOX1_ADDRESS 0x30
 #define LOX2_ADDRESS 0x31
-//#define LOX3_ADDRESS 0x32
 
 // set the pins to shutdown
 #define SHT_LOX1 3  //wall sensor
 #define SHT_LOX2 2  //cliff sensor
-//#define SHT_LOX3 5
 
 // Optional define GPIO pins to check to see if complete
 #define GPIO_LOX1 4
 #define GPIO_LOX2 3
-//#define GPIO_LOX3 2
 
 #define TIMING_PIN 13
 
 // objects for the VL6180X
 Adafruit_VL6180X lox1 = Adafruit_VL6180X();// wall sensor
 Adafruit_VL6180X lox2 = Adafruit_VL6180X();// cliff sensor
-//Adafruit_VL6180X lox3 = Adafruit_VL6180X();
 
 // Setup mode for doing reads
 typedef enum {RUN_MODE_DEFAULT, RUN_MODE_TIMED, RUN_MODE_ASYNC, RUN_MODE_GPIO, RUN_MODE_CONT} runmode_t;
@@ -70,37 +65,10 @@ void setup() {
   pinMode(m4n,OUTPUT);
   Serial.begin(115200);
   delay(200);
-  //test();
-  //Left(1000);
-  //delay(200);
-
   sensorSetup();
-//  // wait for serial port to open on native usb devices
-//  while (!Serial) {
-//    delay(1);
-//  }
-//  
-//  Serial.println("Adafruit VL6180x test!");
-//  if (! vl.begin()) {
-//    Serial.println("Failed to find sensor");
-//    while (1);
-//  }
-//  Serial.println("Sensor found!");
   toggleForward();
-
 }
  
 void loop() {
-  //Serial.println(analogRead(cliff));
- // Serial.println("test");
-  // put your main code here, to run repeatedly:
- //checkCliff();
- //Serial.println(gonnaFall());
- //dontFall();
- Serial.print("cliff: ");
- Serial.println(gonnaFall());
- Serial.print("front: ");
- Serial.println(gonnaCrash());
- delay(1000);
-
+ dontDie();
 }
