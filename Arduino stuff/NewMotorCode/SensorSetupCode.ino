@@ -331,12 +331,9 @@ void Process_continuous_range() {
     sensors_pending = ALL_SENSORS_PENDING;
   }
  }
-
-
-
 bool gonnaFall(){
-  uint8_t range = vl.readRange();
-  uint8_t status = vl.readRangeStatus();
+  uint8_t range = 1ox1.readRange();
+  uint8_t status = 1ox1.readRangeStatus();
 
   if (status == VL6180X_ERROR_NONE && range<100) {
     return false;

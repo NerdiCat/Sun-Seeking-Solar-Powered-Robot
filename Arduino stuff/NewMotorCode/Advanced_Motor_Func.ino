@@ -9,13 +9,13 @@ void dontFall(){  //code to check if going over a clif and correct
   //int lastRead=currentRead;
   //currentRead=analogRead(cliff);
   //if (abs(lastRead-currentRead)>400 && S==0){ //check the last two readings and if there is a dramatic change stop going forward and initiate anti-falling mechanisms
-   /* if (gonnaFall()){
+    if (gonnaFall()){
     Stop();
    // Serial.println(analogRead(cliff));
     Serial.println("stop");
     Back(200);
   } 
-  */
+  
  /* if (S==1){//the antifalling mechanism is currently just going backwards for half a seccond
     Back(500);
     S=2;    
