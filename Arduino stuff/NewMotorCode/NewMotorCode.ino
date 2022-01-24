@@ -42,7 +42,7 @@ uint8_t show_command_list = 1;
 // Define some globals used in the continuous range mode
 // Note: going to start table drive this part, may back up and do the rest later
 Adafruit_VL6180X *sensors[] = {&lox1, &lox2,/*&lox3*/};
-const uint8_t COUNT_SENSORS = sizeof(sensors) / sizeof(sensors[0]);
+const uint8_t COUNT_SENSORS = sizeof(sensors) / sizeof(sensors[0]); 
 const int sensor_gpios[COUNT_SENSORS] = {GPIO_LOX1, GPIO_LOX2, /*GPIO_LOX3*/}; // if any are < 0 will poll instead
 
 uint8_t         sensor_ranges[COUNT_SENSORS];
