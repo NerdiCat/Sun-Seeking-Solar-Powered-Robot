@@ -55,7 +55,9 @@ uint32_t        sensor_last_cycle_time;
   
 void setup() {
   // put your setup code here, to run once:
-  pinMode(m1p,OUTPUT);
+  pinMode(13,OUTPUT);
+  digitalWrite(13,HIGH);
+  while (1);
   pinMode(m1n,OUTPUT);
   pinMode(m2p,OUTPUT);
   pinMode(m2n,OUTPUT);
@@ -66,9 +68,12 @@ void setup() {
   Serial.begin(115200);
   delay(200);
   sensorSetup();
-  toggleForward();
+  //test();
+  //Back(10000);
+  
 }
  
 void loop() {
- dontDie();
+ //dontDie();
+ digitalWrite(13,HIGH);
 }
