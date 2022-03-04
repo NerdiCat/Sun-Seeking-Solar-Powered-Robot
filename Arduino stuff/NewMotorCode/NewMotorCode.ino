@@ -26,7 +26,7 @@
 #define GPIO_LOX1 4
 #define GPIO_LOX2 3
 
-#define TIMING_PIN 13
+#define TIMING_PIN 5
 
 // objects for the VL6180X
 Adafruit_VL6180X lox1 = Adafruit_VL6180X();// wall sensor
@@ -55,9 +55,6 @@ uint32_t        sensor_last_cycle_time;
   
 void setup() {
   // put your setup code here, to run once:
-  pinMode(13,OUTPUT);
-  digitalWrite(13,HIGH);
-  while (1);
   pinMode(m1n,OUTPUT);
   pinMode(m2p,OUTPUT);
   pinMode(m2n,OUTPUT);
@@ -68,12 +65,13 @@ void setup() {
   Serial.begin(115200);
   delay(200);
   sensorSetup();
-  //test();
-  //Back(10000);
+  test();
+  //Forward(10000);
   
 }
  
 void loop() {
- //dontDie();
- digitalWrite(13,HIGH);
+ dontDie();
+ 
+
 }
