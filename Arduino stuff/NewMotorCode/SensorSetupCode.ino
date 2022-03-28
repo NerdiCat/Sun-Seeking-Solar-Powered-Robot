@@ -227,7 +227,7 @@ void stop_continuous_range() {
   delay(100); // give time for it to complete.
 }
 
-void Process_continuous_range() {
+/*void Process_continuous_range() {
 
   uint16_t mask = 1;
   for (uint8_t i = 0; i < COUNT_SENSORS; i++) {
@@ -267,7 +267,7 @@ void Process_continuous_range() {
     sensor_last_cycle_time = millis();
     sensors_pending = ALL_SENSORS_PENDING;
   }
- }
+ }*/
  void sensorSetup(){
  Serial.begin(115200);
 

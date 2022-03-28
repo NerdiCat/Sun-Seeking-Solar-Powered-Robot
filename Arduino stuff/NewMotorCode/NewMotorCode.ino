@@ -23,8 +23,8 @@
 #define SHT_LOX2 2  //cliff sensor
 
 // Optional define GPIO pins to check to see if complete
-#define GPIO_LOX1 4
-#define GPIO_LOX2 3
+//#define GPIO_LOX1 4
+//#define GPIO_LOX2 3
 
 #define TIMING_PIN 5
 
@@ -43,7 +43,7 @@ uint8_t show_command_list = 1;
 // Note: going to start table drive this part, may back up and do the rest later
 Adafruit_VL6180X *sensors[] = {&lox1, &lox2,/*&lox3*/};
 const uint8_t COUNT_SENSORS = sizeof(sensors) / sizeof(sensors[0]); 
-const int sensor_gpios[COUNT_SENSORS] = {GPIO_LOX1, GPIO_LOX2, /*GPIO_LOX3*/}; // if any are < 0 will poll instead
+//const int sensor_gpios[COUNT_SENSORS] = {GPIO_LOX1, GPIO_LOX2, /*GPIO_LOX3*/}; // if any are < 0 will poll instead
 
 uint8_t         sensor_ranges[COUNT_SENSORS];
 uint8_t         sensor_status[COUNT_SENSORS];
@@ -55,6 +55,7 @@ uint32_t        sensor_last_cycle_time;
   
 void setup() {
   // put your setup code here, to run once:
+  pinMode(m1p,OUTPUT);
   pinMode(m1n,OUTPUT);
   pinMode(m2p,OUTPUT);
   pinMode(m2n,OUTPUT);
