@@ -15,18 +15,7 @@ void setup() {
   digitalWrite(12, LOW);
   digitalWrite(10, LOW);
   digitalWrite(8, LOW);
-  digitalWrite(6
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  , LOW);
+  digitalWrite(6, LOW);
 }
 
 void loop() {
