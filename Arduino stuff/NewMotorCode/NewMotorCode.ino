@@ -66,8 +66,8 @@ void setup() {
   Serial.begin(115200);
   delay(200);
   sensorSetup();
-  test();
-  //Forward(10000);
+  //test();
+  Forward(10000);
   
 }
  
