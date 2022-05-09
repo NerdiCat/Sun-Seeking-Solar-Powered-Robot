@@ -1,4 +1,5 @@
 void test(){  //runs a serise of motor comands to make sure the motors are working and calabrated
+  Serial.println("testing");
   single_test();
   Right(1000);
 }
