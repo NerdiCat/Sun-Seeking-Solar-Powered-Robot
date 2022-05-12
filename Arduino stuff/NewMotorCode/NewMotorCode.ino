@@ -66,9 +66,9 @@ void setup() {
   Serial.begin(115200);
   delay(200);
   sensorSetup();
+  toggleForward();
   //test();
-  Forward(10000);
-  
+  //Forward(10000);
 }
  
 void loop() {

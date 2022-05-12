@@ -9,9 +9,21 @@ void single_test(){
   }
 }
 void toggleForward(){
-  for (int i = 1; i <= 4; i++) {
+  /*for (int i = 1; i <= 4; i++) {
     Motor(i,'f');
- }
+ }*/
+ Motor(1,'f');
+ Motor(3,'f');
+ delay(100);
+ Motor(2, 'f');
+ Motor(4, 'f');
+}
+void toggleBackward(){
+ Motor(1,'b');
+ Motor(3,'b');
+ delay(200);
+ Motor(2, 'b');
+ Motor(4, 'b');
 }
 void Stop(){
  for (int i = 1; i <= 4; i++) {
@@ -19,9 +31,10 @@ void Stop(){
  }
 }
 void Forward(int t){
-  for (int i = 1; i <= 4; i++) {
+  /*for (int i = 1; i <= 4; i++) {
     Motor(i,'f');
- }
+ }*/
+ toggleForward();
  delay(t);
  Stop();
 }
@@ -45,9 +58,7 @@ void Right(int t){
 }
 
 void Back(int t){
- for (int i = 1; i <= 4; i++) {
-   Motor(i,'b');
- }
+ toggleBackward();
  delay(t);
  Stop();
 }
