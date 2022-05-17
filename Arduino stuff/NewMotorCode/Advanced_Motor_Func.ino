@@ -7,7 +7,7 @@ int S=0;  //variable used to trigger stop command once
 void dontDie(){  //code to check if going over a clif and correct
     if (gonnaFall()||gonnaCrash()){
     Stop();
+    Back(350);
     Serial.println("stop");
-    Back(200);
   } 
 }

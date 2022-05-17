@@ -19,11 +19,13 @@ void toggleForward(){
  Motor(4, 'f');
 }
 void toggleBackward(){
+ delay(200);
  Motor(1,'b');
  Motor(3,'b');
- delay(200);
+ delay(50);
  Motor(2, 'b');
  Motor(4, 'b');
+ 
 }
 void Stop(){
  for (int i = 1; i <= 4; i++) {

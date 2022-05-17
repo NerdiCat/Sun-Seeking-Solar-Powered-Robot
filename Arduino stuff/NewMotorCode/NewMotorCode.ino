@@ -1,11 +1,11 @@
   int m1p=13; //motor 1 positive
   int m1n=12; //motor 1 negative
-  int m2p=11;
-  int m2n=10;
-  int m3p=9;
-  int m3n=8;
+  int m2p=11; //pwm
+  int m2n=10; //pwm
+  int m3p=9;  //pwm
+  int m3n=8;  
   int m4p=7;
-  int m4n=6;
+  int m4n=6;  //pwm
   int cliff=A0;
   #include <Wire.h>
   #include "Adafruit_VL6180X.h"
@@ -66,8 +66,8 @@ void setup() {
   Serial.begin(115200);
   delay(200);
   sensorSetup();
-  toggleForward();
-  //test();
+  //toggleForward();
+  test();
   //Forward(10000);
 }
  

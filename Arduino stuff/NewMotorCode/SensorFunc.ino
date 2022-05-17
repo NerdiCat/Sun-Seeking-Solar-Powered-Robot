@@ -6,7 +6,7 @@ bool gonnaFall(){
     return false;
   }
   else return true;
-  delay(50);
+  delay(25);
 }
 
 bool gonnaCrash(){
